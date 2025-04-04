@@ -13,7 +13,7 @@ const About = () => {
         <div className="about-grid">
           <div className="about-img">
             <div className="img-container">
-              <img src="/src/assets/images/profile.jpeg" alt="Profile" />
+              <img src="/profile.jpeg" alt="Profile" />
             </div>
           </div>
           
