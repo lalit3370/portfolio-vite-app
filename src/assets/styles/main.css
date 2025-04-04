@@ -1,17 +1,67 @@
-/* Global Styles */
+/* ===== Global Styles ===== */
 :root {
+  /* Light Theme Defaults */
   --primary-color: #3498db;
+  --primary-hover: #2980b9;
   --secondary-color: #2c3e50;
-  --light-color: #ecf0f1;
-  --dark-color: #2c3e50;
+  --secondary-hover: #1a252f;
   --accent-color: #e74c3c;
-  --text-color: #333;
-  --text-light: #777;
-  --bg-color: #f9f9f9;
-  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --accent-hover: #c0392b;
+  
+  /* Background Colors */
+  --bg-primary: #f9f9f9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #ecf0f1;
+  
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #777777;
+  --text-inverse: #ffffff;
+  
+  /* Borders */
+  --border-color: #dddddd;
+  --border-radius: 5px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
 }
 
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --primary-color: #3498db;
+  --primary-hover: #2980b9;
+  --secondary-color: #f8f9fa;
+  --secondary-hover: #e9ecef;
+  --accent-color: #e74c3c;
+  --accent-hover: #c0392b;
+  
+  /* Background Colors */
+  --bg-primary: #212529;
+  --bg-secondary: #343a40;
+  --bg-tertiary: #495057;
+  
+  /* Text Colors */
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --text-inverse: #212529;
+  
+  /* Borders */
+  --border-color: #495057;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Base Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -25,8 +75,24 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: var(--transition-normal);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -38,6 +104,7 @@ body {
 
 section {
   padding: 80px 0;
+  background-color: var(--bg-primary);
 }
 
 .section-title {
@@ -61,13 +128,14 @@ section {
 .btn {
   display: inline-block;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-inverse);
   padding: 12px 25px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 600;
-  transition: var(--transition);
+  transition: var(--transition-normal);
   border: 2px solid var(--primary-color);
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -83,19 +151,20 @@ section {
 
 .btn-outline:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-inverse);
 }
 
-/* Header Styles */
+/* ===== Header Styles ===== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
-  box-shadow: var(--shadow);
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
   z-index: 1000;
   padding: 20px 0;
+  transition: var(--transition-normal);
 }
 
 .header .container {
@@ -117,10 +186,10 @@ section {
 }
 
 .nav a {
-  color: var(--text-color);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
-  transition: var(--transition);
+  transition: var(--transition-normal);
   position: relative;
 }
 
@@ -136,7 +205,7 @@ section {
   width: 0;
   height: 2px;
   background-color: var(--primary-color);
-  transition: var(--transition);
+  transition: var(--transition-normal);
 }
 
 .nav a:hover::after {
@@ -152,18 +221,43 @@ section {
   cursor: pointer;
 }
 
-/* Hero Styles */
+/* Theme Toggle Styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 15px;
+  transition: var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Hero Styles ===== */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(231, 76, 60, 0.1) 100%);
+  background: linear-gradient(135deg, 
+    rgba(52, 152, 219, 0.1) 0%, 
+    rgba(231, 76, 60, 0.1) 100%);
   padding-top: 80px;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 15px;
+  color: var(--text-primary);
 }
 
 .hero-content h1 span {
@@ -173,7 +267,7 @@ section {
 .hero-content h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--text-light);
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
@@ -181,6 +275,7 @@ section {
   font-size: 1.1rem;
   margin-bottom: 30px;
   max-width: 600px;
+  color: var(--text-primary);
 }
 
 .hero-btns {
@@ -195,7 +290,7 @@ section {
 .hero-social a {
   color: var(--secondary-color);
   font-size: 1.5rem;
-  transition: var(--transition);
+  transition: var(--transition-normal);
 }
 
 .hero-social a:hover {
@@ -203,7 +298,7 @@ section {
   transform: translateY(-5px);
 }
 
-/* About Styles */
+/* ===== About Styles ===== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -220,7 +315,7 @@ section {
   height: 300px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
 }
 
 .about-img img {
@@ -231,6 +326,7 @@ section {
 
 .about-content p {
   margin-bottom: 20px;
+  color: var(--text-primary);
 }
 
 .about-info {
@@ -242,16 +338,17 @@ section {
 
 .about-info div span {
   display: block;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 5px;
 }
 
 .about-info div p {
   font-weight: 600;
   margin: 0;
+  color: var(--text-primary);
 }
 
-/* Skills Styles */
+/* ===== Skills Styles ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -259,15 +356,16 @@ section {
 }
 
 .skill-item {
-  background-color: white;
+  background-color: var(--bg-secondary);
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
 }
 
 .skill-item:hover {
   transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
 }
 
 .skill-icon {
@@ -278,12 +376,13 @@ section {
 
 .skill-item h3 {
   margin-bottom: 15px;
+  color: var(--text-primary);
 }
 
 .skill-bar {
   width: 100%;
   height: 10px;
-  background-color: #eee;
+  background-color: var(--bg-tertiary);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -294,7 +393,7 @@ section {
   border-radius: 5px;
 }
 
-/* Projects Styles */
+/* ===== Projects Styles ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -302,15 +401,16 @@ section {
 }
 
 .project-card {
-  background-color: white;
-  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
 }
 
 .project-card:hover {
   transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
 }
 
 .project-img {
@@ -322,7 +422,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  transition: var(--transition-normal);
 }
 
 .project-card:hover .project-img img {
@@ -335,10 +435,11 @@ section {
 
 .project-content h3 {
   margin-bottom: 15px;
+  color: var(--text-primary);
 }
 
 .project-content p {
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: 20px;
 }
 
@@ -353,7 +454,7 @@ section {
   background-color: rgba(52, 152, 219, 0.1);
   color: var(--primary-color);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -370,14 +471,14 @@ section {
   color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  transition: var(--transition);
+  transition: var(--transition-normal);
 }
 
 .project-links a:hover {
   color: var(--primary-color);
 }
 
-/* Contact Styles */
+/* ===== Contact Styles ===== */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -385,20 +486,21 @@ section {
 }
 
 .contact-info {
-  background-color: white;
+  background-color: var(--bg-secondary);
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .contact-info h3 {
   margin-bottom: 20px;
   font-size: 1.5rem;
+  color: var(--text-primary);
 }
 
 .contact-info p {
   margin-bottom: 30px;
-  color: var(--text-light);
+  color: var(--text-secondary);
 }
 
 .info-item {
@@ -415,13 +517,18 @@ section {
 
 .info-item h4 {
   margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.info-item a, .info-item p {
+  color: var(--text-secondary);
 }
 
 .contact-form {
-  background-color: white;
+  background-color: var(--bg-secondary);
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .form-group {
@@ -432,16 +539,19 @@ section {
 .form-group textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   font-family: inherit;
-  transition: var(--transition);
+  transition: var(--transition-normal);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 .form-group textarea {
@@ -449,11 +559,12 @@ section {
   min-height: 150px;
 }
 
-/* Footer Styles */
+/* ===== Footer Styles ===== */
 .footer {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--bg-tertiary); /* Updated to use theme variable */
+  color: var(--text-primary); /* Updated to use theme variable */
   padding: 50px 0 20px;
+  transition: var(--transition-normal);
 }
 
 .footer-content {
@@ -466,10 +577,11 @@ section {
 .footer-info h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
+  color: var(--text-primary); /* Added for consistency */
 }
 
 .footer-info p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary); /* Updated to use theme variable */
 }
 
 .footer-social {
@@ -478,9 +590,9 @@ section {
 }
 
 .footer-social a {
-  color: white;
+  color: var(--text-primary); /* Updated to use theme variable */
   font-size: 1.5rem;
-  transition: var(--transition);
+  transition: var(--transition-normal);
 }
 
 .footer-social a:hover {
@@ -489,15 +601,15 @@ section {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color); /* Updated to use theme variable */
   padding-top: 20px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary); /* Updated to use theme variable */
   display: flex;
   justify-content: space-between;
 }
 
-/* Responsive Styles */
+/* ===== Responsive Styles ===== */
 @media (max-width: 992px) {
   .about-grid,
   .contact-grid {
@@ -517,12 +629,12 @@ section {
     left: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: white;
+    background-color: var(--bg-secondary);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    transition: var(--transition);
+    transition: var(--transition-normal);
   }
   
   .nav.open {
@@ -571,4 +683,21 @@ section {
   .about-info {
     grid-template-columns: 1fr;
   }
+  
+  .contact-grid {
+    gap: 20px;
+  }
+}
+
+/* ===== Smooth Theme Transitions ===== */
+body, header, section, footer {
+  transition: background-color var(--transition-normal), 
+              color var(--transition-normal);
+}
+
+a, button, h1, h2, h3, h4, p, span, .skill-item, .project-card {
+  transition: color var(--transition-normal), 
+              background-color var(--transition-normal),
+              transform var(--transition-normal),
+              box-shadow var(--transition-normal);
 }

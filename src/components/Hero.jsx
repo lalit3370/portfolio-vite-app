@@ -19,7 +19,7 @@ const Hero = () => {
         <div className="hero-social">
           <a href="https://github.com/lalit3370" target="_blank" rel="noreferrer"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/lalit-kumar-singh-38b807193/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-          <a href="https://x.com/lalit3370?s=11" target="_blank" rel="noreferrer"><FaTwitter /></a>
+          {/* <a href="#" target="_blank" rel="noreferrer"><FaTwitter /></a> */}
         </div>
       </div>
     </section>

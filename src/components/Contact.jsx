@@ -45,23 +45,23 @@ const Contact = () => {
               <FiMail className="info-icon" />
               <div>
                 <h4>Email</h4>
-                <a href="mailto:alex@example.com">alex@example.com</a>
+                <a href="mailto:lalitks.dev@gmail.com">lalitks.dev@gmail.com</a>
               </div>
             </div>
             
-            <div className="info-item">
+            {/* <div className="info-item">
               <FiPhone className="info-icon" />
               <div>
                 <h4>Phone</h4>
                 <a href="tel:+1234567890">+1 (234) 567-890</a>
               </div>
-            </div>
+            </div> */}
             
             <div className="info-item">
               <FiMapPin className="info-icon" />
               <div>
                 <h4>Location</h4>
-                <p>San Francisco, CA</p>
+                <p>Noida, Uttar Pradesh</p>
               </div>
             </div>
           </div>
