@@ -1,0 +1,9 @@
+export const EMAIL = "lalitks.dev@gmail.com";
+export const NAME = "Lalit Kumar Singh";
+export const PHONE = "+91 (965) 408-6637";
+export const PHONE_RAW = "+919654086637";
+export const LOCATION = "Noida, India";
+export const GITHUB_URL = "https://github.com/lalit3370";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/lalit-kumar-singh-38b807193/";
+export const RESUME_URL = "./resume.pdf";
+export const POST = "Senior Frontend Engineer";
