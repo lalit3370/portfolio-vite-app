@@ -18,7 +18,7 @@ const Projects = () => {
 			image:
 				"https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop",
 			github: "https://github.com/lalit3370/chaos-ds",
-			demo: "http://localhost:6006/?path=/story/components-stepper--primary",
+			demo: "https://projects.lalitkumar.dev/?path=/story/components-stepper--primary",
 		},
 	];
 
@@ -91,7 +91,7 @@ const Projects = () => {
 									<Button
 										size="sm"
 										className="flex items-center gap-2 gradient-primary hover-glow"
-										onClick={() => console.log({project})}
+										onClick={() => window.open(project?.demo)}
 									>
 										<ExternalLink size={16} />
 										Demo
