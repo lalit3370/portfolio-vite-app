@@ -6,4 +6,4 @@ export const LOCATION = "Noida, India";
 export const GITHUB_URL = "https://github.com/lalit3370";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/lalit3370/";
 export const RESUME_URL = "./resume.pdf";
-export const POST = "Software Engineer";
+export const POST = "Senior Software Engineer";

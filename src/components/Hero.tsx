@@ -41,9 +41,9 @@ const Hero = () => {
             </div>
 
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Crafting exceptional digital experiences with modern web
-              technologies. Passionate about performance, accessibility, and
-              user-centered design.
+              Frontend engineer at Brevo, shipping AI-powered features, design
+              system components, and tooling that scale across product teams.
+              Focused on performance, accessibility, and developer experience.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

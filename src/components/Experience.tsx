@@ -4,30 +4,38 @@ import { Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      title: "Senior Software Engineer",
+      company: "Brevo",
+      location: "Noida, India",
+      period: "Mar 2026 - Present",
+      description: [
+        "Developing AI-powered features behind feature flags for rapid experimentation — shipping fast, monitoring real user behaviour, and rolling back when needed.",
+        "Building organisation-level Claude skills to optimise token usage and improve context quality; authored skills for semantic commit messages and automated PR reviews (design system compliance, performance, best practices, code smell detection).",
+        "Expanding scope into QA automation scripting and backend development, broadening full-stack contribution."
+      ]
+    },
+    {
       title: "Software Engineer",
       company: "Brevo",
       location: "Noida, India",
-      period: "2023 - Present",
+      period: "Feb 2023 - Mar 2026",
       description: [
-        "Contributed to the development and enhancement of the internal UI component library.",
-        "Collaborated with designers to implement pixel-perfect user interfaces.",
-        "Built and maintained CI/CD pipelines to automate testing and deployment processes.",
-        "Designed scalable, maintainable component architectures for long-term sustainability.",
-        "Focused on accessibility and mobile-first development approaches.",
-        "Integrated security tools such as Google reCAPTCHA, Ehawk Talon, and SiftScience to mitigate DDoS attacks and enhance platform security."
+        "Owned end-to-end delivery of Brevo's registration flow (tens of thousands of users) with DB failover handling, multi-language support, fraud prevention (reCAPTCHA v3, eHawk, Sift Science), and input sanitization; deployed a critical hotfix during a live DDoS attack, earning the Core Value Champion Award.",
+        "Improved Lighthouse score from 40% to 90% by implementing code splitting, lazy loading, and image optimization; reduced bundle size by replacing Axios with a lightweight custom apiFetch utility.",
+        "Built global reusable components (Banner, DatePicker, Toggle, Select), drove DS architecture decisions (props design, factory hooks, state patterns), and authored Storybook docs; led MFE migration via Webpack Module Federation, eliminating hard reloads and redundant fetches.",
+        "Integrated FullStory, Elastic RUM, and GTM for session replay, performance monitoring, and A/B testing; owned production incident response and collaborated with the pricing team on feature-flagged rollouts.",
+        "Championed React 18 upgrade and DS component revamps across the org; built shared utilities (apiFetch); mentored junior engineers and led PR reviews on performance, accessibility, and code quality."
       ]
     },
     {
       title: "Associate Software Engineer",
       company: "Brevo",
       location: "Noida, India",
-      period: "2021 - 2023",
+      period: "Jun 2021 - Feb 2023",
       description: [
-        "Developed and enhanced the user registration flow to improve onboarding experience.",
-        "Integrated third-party analytics solutions, including ElasticSearch, for enhanced data insights.",
-        "Maintained and optimized existing features while resolving reported bugs.",
-        "Improved application performance through targeted optimizations and code refactoring.",
-        "Built proficiency in modern JavaScript frameworks and advanced build tools."
+        "Grew test coverage from near-zero to 80%+ by introducing snapshot testing patterns, mock Redux store, and standardized Jest timezone across CI environments.",
+        "Improved team DX by adding Husky/lint-staged pre-commit hooks, ESLint and Prettier enforcement, reducing review friction and maintaining consistent code quality.",
+        "Identified and resolved security vulnerabilities including XSS risks via input sanitization and HTML injection prevention; contributed to frontend performance optimisation across legacy pages."
       ]
     }
   ];

@@ -1,12 +1,12 @@
 
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
-import { NAME, POST } from "@/lib/contants";
+import { NAME, POST, GITHUB_URL, LINKEDIN_URL, EMAIL } from "@/lib/contants";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Github size={20} />, href: "#", label: "GitHub" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <Mail size={20} />, href: "#", label: "Email" },
+    { icon: <Github size={20} />, href: GITHUB_URL, label: "GitHub" },
+    { icon: <Linkedin size={20} />, href: LINKEDIN_URL, label: "LinkedIn" },
+    { icon: <Mail size={20} />, href: `mailto:${EMAIL}`, label: "Email" },
   ];
 
   const currentYear = new Date().getFullYear();

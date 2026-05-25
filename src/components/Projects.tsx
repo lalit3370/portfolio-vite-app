@@ -4,6 +4,55 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
 	const projects = [
 		{
+			title: "DatePicker — Org-wide Design System",
+			description:
+				"Accessible DatePicker (single & range) with keyboard/ARIA support, custom triggers, and localization. Proposed and implemented a factory hook pattern that cut repetitive setup by ~60%, adopted across all Brevo product teams.",
+			technologies: [
+				"React",
+				"TypeScript",
+				"Design System",
+				"ARIA",
+				"Factory Hooks",
+				"Storybook",
+			],
+			image:
+				"https://images.unsplash.com/photo-1606327054629-64c8b0fd6e4f?w=800&h=600&fit=crop",
+			github: "",
+			demo: "https://naos.brevo.design",
+		},
+		{
+			title: "Optimize Translation Script",
+			description:
+				"JS script that detects and removes redundant or unused translation keys across all frontend repos, reducing bundle size and eliminating repetitive manual cleanup org-wide.",
+			technologies: [
+				"Node.js",
+				"JavaScript",
+				"AST",
+				"i18n",
+				"Bundle Optimization",
+			],
+			image:
+				"https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
+			github: "",
+			demo: "",
+		},
+		{
+			title: "Cross-Repo Automated Upgrade CLI",
+			description:
+				"Shell-based CLI that auto-verifies, installs, and raises PRs across consuming repos — extended with GitHub Actions for release-triggered rollouts and auto-generated PR descriptions.",
+			technologies: [
+				"Shell",
+				"Node.js",
+				"GitHub Actions",
+				"Automation",
+				"Monorepo",
+			],
+			image:
+				"https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&h=600&fit=crop",
+			github: "",
+			demo: "",
+		},
+		{
 			title: "Token Driven Design System",
 			description:
 				"A scalable design system focused on consistency and constraints. Built with a token-first approach, opinionated component APIs, and Storybook as the primary documentation layer. Prioritizes maintainability over visual experimentation.",
@@ -79,23 +128,27 @@ const Projects = () => {
 								</div>
 
 								<div className="flex gap-4">
-									<Button
-										variant="outline"
-										size="sm"
-										className="flex items-center gap-2 glass border-border/50 hover:border-primary/50"
-										onClick={() => window.open(project?.github)}
-									>
-										<Github size={16} />
-										Code
-									</Button>
-									<Button
-										size="sm"
-										className="flex items-center gap-2 gradient-primary hover-glow"
-										onClick={() => window.open(project?.demo)}
-									>
-										<ExternalLink size={16} />
-										Demo
-									</Button>
+									{project.github && (
+										<Button
+											variant="outline"
+											size="sm"
+											className="flex items-center gap-2 glass border-border/50 hover:border-primary/50"
+											onClick={() => window.open(project.github)}
+										>
+											<Github size={16} />
+											Code
+										</Button>
+									)}
+									{project.demo && (
+										<Button
+											size="sm"
+											className="flex items-center gap-2 gradient-primary hover-glow"
+											onClick={() => window.open(project.demo)}
+										>
+											<ExternalLink size={16} />
+											Demo
+										</Button>
+									)}
 								</div>
 							</div>
 						</div>

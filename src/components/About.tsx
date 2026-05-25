@@ -3,25 +3,26 @@ import { Code2, Palette, Zap } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    'HTML5', 'CSS', 'JavaScript', 'React.js', 'Next.js', 'RESTful APIs',
-    'SCSS', 'Webpack', 'Less'
+    'JavaScript', 'TypeScript', 'React', 'Redux', 'Webpack',
+    'Module Federation', 'Jest', 'React Testing Library', 'Storybook',
+    'HTML', 'CSS', 'GitHub Actions', 'Elastic RUM', 'FullStory', 'Claude Code'
   ];
 
   const highlights = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable, and performant code following best practices."
-    },
-    {
-      icon: <Palette className="w-8 h-8" />,
       title: "Design Systems",
-      description: "Creating consistent and reusable component libraries with attention to detail."
+      description: "Built reusable components (DatePicker, Banner, Select) for Brevo's org-wide DS — props design, factory hooks, Storybook docs."
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Performance",
-      description: "Optimizing applications for speed, accessibility, and exceptional user experience."
+      description: "Lifted Lighthouse from 40% to 90% via code splitting, lazy loading, image optimization, and a lightweight apiFetch utility."
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "AI & Tooling",
+      description: "Building organisation-level Claude skills for semantic commits and automated PR reviews — DS compliance, performance, code smells."
     }
   ];
 
@@ -38,9 +39,10 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            With over 4 years of experience in frontend development, I specialize in creating 
-            exceptional user experiences using modern web technologies. I'm passionate about 
-            writing clean, efficient code and staying up-to-date with the latest industry trends.
+            Senior Software Engineer at Brevo with 5+ years building frontend at
+            scale — owning Brevo's registration flow, driving the org-wide design
+            system, championing performance and React upgrades, and now shipping
+            AI-powered features and Claude tooling for the engineering org.
           </p>
         </div>
 
